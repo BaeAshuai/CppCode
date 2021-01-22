@@ -4,7 +4,7 @@ using namespace std;
 class Number
 {
 private:
-    int data[50][4] = {0};
+    int data[50][4];
     int count_data;
 
 public:
@@ -25,15 +25,18 @@ public:
     void fund()
     {
         int sum = 0;
-        for (int i = 1; i <= 15; i++)
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        for (i = 1; i <= 30; i++)
         {
             if (isprime(i))
             {
-                for (int j = i; j <= 30; j++)
+                for (j = i + 1; j <= 30; j++)
                 {
                     if (isprime(j))
                     {
-                        for (int k = j; k <= 30; k++)
+                        for (k = j + 1; k <= 30; k++)
                         {
                             if (isprime(k))
                             {
