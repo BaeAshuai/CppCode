@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 class STR
@@ -20,17 +21,10 @@ STR::STR(char *p)
 
 STR &operator+=(STR &str1, STR &str2)
 {
-    char *p1 = str1.s;
-    char *p2 = str2.s;
-    while (*p1++ != '\0')
-    {
-    }
-    p1--;
-    while (*p2 != '\0')
-    {
-        *p1++ = *p2++;
-    }
-    *p1 = '\0';
+    char *p = new char[strlen(str1.s) + strlen(str2.s) + 1];
+    strcpy(p, str1.s);
+    strcpy(p + strlen(str1.s), str2.s);
+    str1.s = p;
     return str1;
 }
 
@@ -45,7 +39,7 @@ STR::~STR()
 
 int main()
 {
-    char _s1[10] = "abcd";
+    char _s1[] = "abcd";
     char _s2[] = "1234";
     STR s1(_s1);
     STR s2(_s2);
