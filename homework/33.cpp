@@ -13,8 +13,7 @@ public:
     {
         startnum = s;
         n = m;
-        int num[20][20];
-        p = num;
+        p = new int[20][20]();
     }
     void process()
     {
@@ -31,7 +30,15 @@ public:
                 num[i][j] = k++;
             }
         }
-        p = num;
+        int(*_p)[20] = p;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                (*_p)[j] = num[i][j];
+            }
+            _p++;
+        }
     }
     void print()
     {
@@ -54,7 +61,7 @@ public:
 
 int main()
 {
-    PHALANX test(1, 5);
+    PHALANX test(1, 10);
     test.process();
     test.print();
     system("pause");

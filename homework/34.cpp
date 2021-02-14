@@ -62,7 +62,7 @@ public:
 
 int main()
 {
-    MATRIX t(1, 7);
+    MATRIX t(1, 5);
     t.process();
     t.print();
     system("pause");
