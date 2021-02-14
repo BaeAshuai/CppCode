@@ -21,8 +21,8 @@ public:
         for (int i = 0; i < 5; i++)
             for (int j = 0; j < 4 - i; j++)
             {
-                if (*p[i] > *p[i + 1])
-                    swap(p[i], p[i + 1]);
+                if (strcmp(p[j], p[j + 1]) > 0)
+                    swap(p[j], p[j + 1]);
             }
     }
     void print()
