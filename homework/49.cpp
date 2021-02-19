@@ -39,9 +39,45 @@ public:
     }
 };
 
+template <class T>
+class Stack
+{
+private:
+    T arr[100];
+    int currentSize;
+public:
+    Stack() { currentSize = 0; }
+    void push(T temp)
+    {
+        arr[currentSize++] = temp;
+    }
+    T pop()
+    {
+        T temp = arr[currentSize - 1];
+        arr[currentSize - 1] = NULL;
+        currentSize--;
+        return temp;
+    }
+    bool empty()
+    {
+        return (currentSize == 0) ? true : false;
+    }
+    bool full()
+    {
+        return (currentSize == 100) ? true : false;
+    }
+    int size()
+    {
+        return currentSize;
+    }
+    int top()
+    {
+        return currentSize;
+    }
+};
+
 int main()
 {
-
     system("pause");
     return 0;
 }
